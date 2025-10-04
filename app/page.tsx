@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Phone, Mail, MapPin, Clock, Factory, DollarSign, X } from "lucide-react"
-import Head from "next/head"
 
 export default function LiderBetonPage() {
   const [formData, setFormData] = useState({
@@ -241,9 +240,7 @@ export default function LiderBetonPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      </Head>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
 
       {/* Navigation */}
       <nav
@@ -256,7 +253,7 @@ export default function LiderBetonPage() {
               <img
                 src="/images/lider-beton-logo-header.png"
                 alt="Лидер Бетон - Бетонный завод в Каневской"
-                className="h-6 md:h-8 w-auto"
+                className="h-5 md:h-8 w-auto max-w-[140px] md:max-w-none"
               />
             </div>
             <div className="hidden md:flex space-x-6">
