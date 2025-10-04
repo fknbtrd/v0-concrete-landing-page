@@ -64,10 +64,10 @@ export default function LiderBetonPage() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      const navHeight = 80 // высота навигационной панели
+      const navHeight = 80
       const elementRect = element.getBoundingClientRect()
       const absoluteElementTop = elementRect.top + window.pageYOffset
-      const targetPosition = Math.max(0, absoluteElementTop - navHeight) // Убедимся что позиция не отрицательная
+      const targetPosition = Math.max(0, absoluteElementTop - navHeight)
 
       window.scrollTo({
         top: targetPosition,
@@ -150,7 +150,7 @@ export default function LiderBetonPage() {
       specs: "В20 П4 F1OO W2 ГОСТ 7473-2010",
       image: "/images/concrete-m250.png",
       description:
-        "М250 положительные качества этого бетона полностью реализуются при проведении таких работ, как:\nзаливка фундаментов для многоэтажных зданий. Конечно, если строго принимать во внимание требования нормативных актов, необходимо использовать бетон более высокой марки. Однако, в случаях ограниченного бюджета, М250 вполне подойдет – его применение не снизит эксплуатационных качеств постройки;\nизготовление элементов зданий, плит или блоков. При использовании готовых конструкций подобного типа можно значительно ускорить строительство;\nпокрытие дорожек или площадок. Бетон В20 имеет крайне высокие показатели износостойкости и сопротивления воздействиям окружающей среды.\nЕсли возникла необходимость в проведении одной из вышеназванных работ, приобрести подходящий тип раствора можно в нашей компании. Цена бетона М-250 с доставкой приятно удивит любого покупателя.",
+        "М250 положительные качества этого бетона полностью реализуются при проведении таких работ, как:\nзаливка фундаментов для многоэтажных зданий. Конечно, если строгопринимать во внимание требования нормативных актов, необходимо использовать бетон более высокой марки. Однако, в случаях ограниченного бюджета, М250 вполне подойдет – его применение не снизит эксплуатационных качеств постройки;\nизготовление элементов зданий, плит или блоков. При использовании готовых конструкций подобного типа можно значительно ускорить строительство;\nпокрытие дорожек или площадок. Бетон В20 имеет крайне высокие показатели износостойкости и сопротивления воздействиям окружающей среды.\nЕсли возникла необходимость в проведении одной из вышеназванных работ, приобрести подходящий тип раствора можно в нашей компании. Цена бетона М-250 с доставкой приятно удивит любого покупателя.",
     },
     {
       id: "m300",
@@ -181,16 +181,17 @@ export default function LiderBetonPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Лидер Бетон",
+    name: "ЛидерБетон360",
     description:
-      "Производство и доставка бетона всех марок в Каневской. Бетонный завод с собственным автопарком миксеров и бетонососов.",
+      "Производство и доставка бетона всех марок в ст. Каневской и по Каневскому району. Бетон, раствор, щебень, песок. Цены от производителя.",
     url: "https://lider-beton.vercel.app",
     telephone: "+7-918-360-10-10",
     email: "lider360@bk.ru",
     address: {
       "@type": "PostalAddress",
       streetAddress: "ул. Широкая, д. 247",
-      addressLocality: "ст. Каневская",
+      addressLocality: "станица Каневская",
+      addressRegion: "Краснодарский край",
       addressCountry: "RU",
     },
     geo: {
@@ -198,8 +199,8 @@ export default function LiderBetonPage() {
       latitude: "46.0833",
       longitude: "38.9167",
     },
-    openingHours: "Mo-Sa 08:00-18:00",
-    priceRange: "$$",
+    openingHours: "Mo-Su 08:00-20:00",
+    priceRange: "₽₽",
     areaServed: "Каневская и окрестности до 90 км",
     serviceType: "Производство и доставка бетона",
     hasOfferCatalog: {
@@ -253,7 +254,7 @@ export default function LiderBetonPage() {
               <img
                 src="/images/lider-beton-logo-header.png"
                 alt="Лидер Бетон - Бетонный завод в Каневской"
-                className="h-5 md:h-8 w-auto max-w-[140px] md:max-w-none"
+                className="h-6 md:h-8 w-auto"
               />
             </div>
             <div className="hidden md:flex space-x-6">
@@ -654,7 +655,7 @@ export default function LiderBetonPage() {
         </div>
       </section>
 
-      {/* Map Section - Перенес карту в самый низ */}
+      {/* Map Section */}
       <section id="map" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12 text-primary">Мы на карте</h2>
@@ -685,7 +686,7 @@ export default function LiderBetonPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <p>&copy; 2024 Лидер Бетон. Все права защищены.</p>
+              <p>&copy; 2025 Лидер Бетон. Все права защищены.</p>
             </div>
             <div className="flex items-center space-x-4">
               <Phone className="h-5 w-5" />
