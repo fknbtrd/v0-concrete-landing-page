@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -251,10 +251,13 @@ export default function LiderBetonPage() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img
+              <Image
                 src="/images/lider-beton-logo-header.png"
                 alt="Лидер Бетон - Бетонный завод в Каневской"
+                width={200}
+                height={64}
                 className="h-6 md:h-8 w-auto"
+                priority
               />
             </div>
             <div className="hidden md:flex space-x-6">
@@ -306,10 +309,13 @@ export default function LiderBetonPage() {
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="flex items-center justify-center mb-6 gap-4">
-            <img
+            <Image
               src="/images/lider-beton-logo-new.png"
               alt="Лидер Бетон - Производство бетона в Каневской"
+              width={256}
+              height={176}
               className="h-22 md:h-32 w-auto"
+              priority
             />
             <h1
               className="text-3xl sm:text-5xl md:text-8xl font-bold text-balance drop-shadow-lg leading-tight"
@@ -402,10 +408,13 @@ export default function LiderBetonPage() {
               >
                 <CardHeader>
                   <div className="mx-auto w-32 h-32 rounded-lg overflow-hidden mb-4 bg-gray-100 flex items-center justify-center">
-                    <img
+                    <Image
                       src={product.image || "/placeholder.svg"}
                       alt={product.title}
+                      width={128}
+                      height={128}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                   <CardTitle className="text-lg">{product.title}</CardTitle>
