@@ -10,7 +10,8 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  /* Changed primary color from black to dark blue for headings */
+  --primary: oklch(0.25 0.15 250);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -127,6 +128,7 @@
   }
   .font-heading {
     font-family: var(--font-montserrat), Montserrat, system-ui, sans-serif;
+    color: var(--primary); /* Updated to use the new primary color for headings */
   }
 }
 
