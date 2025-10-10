@@ -11,12 +11,14 @@ const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-inter",
   display: "swap",
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Arial", "sans-serif"],
 })
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
   variable: "--font-montserrat",
   display: "swap",
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Arial", "sans-serif"],
 })
 
 export const metadata: Metadata = {
@@ -65,8 +67,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <head />
+      <head>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+      </head>
       <body className={`font-sans ${inter.variable} ${montserrat.variable}`}>
+        <noscript>
+          <div
+            style={{
+              padding: "20px",
+              backgroundColor: "#fef3c7",
+              border: "2px solid #f59e0b",
+              borderRadius: "8px",
+              margin: "20px",
+              textAlign: "center",
+              fontFamily: "Arial, sans-serif",
+            }}
+          >
+            <h2 style={{ color: "#92400e", marginBottom: "10px" }}>JavaScript отключен</h2>
+            <p style={{ color: "#78350f" }}>
+              Для полноценной работы сайта необходимо включить JavaScript в настройках браузера.
+            </p>
+            <p style={{ color: "#78350f", marginTop: "10px" }}>
+              Позвоните нам:{" "}
+              <a href="tel:89183601010" style={{ color: "#1e40af", fontWeight: "bold" }}>
+                8 (918) 360-10-10
+              </a>
+            </p>
+          </div>
+        </noscript>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>

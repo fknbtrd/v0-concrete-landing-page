@@ -69,10 +69,16 @@ export default function LiderBetonPage() {
       const absoluteElementTop = elementRect.top + window.pageYOffset
       const targetPosition = Math.max(0, absoluteElementTop - navHeight)
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      })
+      // Check if smooth scroll is supported
+      if ("scrollBehavior" in document.documentElement.style) {
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        })
+      } else {
+        // Fallback for older browsers
+        window.scrollTo(0, targetPosition)
+      }
     }
   }
 
@@ -301,6 +307,21 @@ export default function LiderBetonPage() {
             backgroundImage: "url('/images/concrete-plant-bg-new.jpg')",
           }}
         />
+        <noscript>
+          <img
+            src="/images/concrete-plant-bg-new.jpg"
+            alt="Бетонный завод Лидер Бетон"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: -1,
+            }}
+          />
+        </noscript>
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-blue-900/60 md:mx-32 md:my-40 md:border-4 md:border-blue-800" />
         </div>
@@ -311,6 +332,13 @@ export default function LiderBetonPage() {
               alt="Лидер Бетон - Производство бетона в Каневской"
               className="h-22 md:h-32 w-auto"
             />
+            <noscript>
+              <img
+                src="/images/lider-beton-logo-new.png"
+                alt="Лидер Бетон - Производство бетона в Каневской"
+                style={{ height: "128px", width: "auto" }}
+              />
+            </noscript>
             <h1
               className="text-3xl sm:text-5xl md:text-8xl font-bold text-balance drop-shadow-lg leading-tight"
               style={{
